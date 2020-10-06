@@ -10,6 +10,12 @@ variable "site_name" {
   description = "Name of the on-premises site"
 }
 
+variable "tenant" {
+  type = string
+  default = "WoS"
+  description = "The MSO tenant to use for this configuration"
+}
+
 variable "schema_name" {
   type = string
   default = "terraform_hybrid_cloud"
