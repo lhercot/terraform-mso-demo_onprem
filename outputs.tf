@@ -4,7 +4,7 @@ output "vmware_vds" {
 }
 
 output "vmware_portgroup" {
-  value = "${var.tenant_name}|${var.name_prefix}App|DB"
+  value = "${var.tenant}|${var.name_prefix}App|DB"
   description = "The name of the VMware portgroup used"
 }
 
