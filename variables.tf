@@ -16,12 +16,6 @@ variable "schema_name" {
   description = "The name of the MSO schema to be created"
 }
 
-variable "subnet_gw" {
-  type = string
-  default = "10.101.10.254/24"
-  description = "The subnet gateway address with mask"
-}
-
 variable "mso_username" {}
 variable "mso_password" {}
 variable "mso_url" {}
