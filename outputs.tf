@@ -10,4 +10,5 @@ output "vmware_portgroup" {
 
 output "onprem_site_id" {
   value = data.mso_site.on_premises.id
+  description = "The id of the On-Prem Site"
 }
