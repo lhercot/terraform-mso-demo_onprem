@@ -6,18 +6,6 @@ terraform {
   }
 }
 
-provider "mso" {
-  # Configuration options
-  // Requires ENV variable TF_VAR_mso_username 
-  username  = var.mso_username
-  // Requires ENV variable TF_VAR_mso_password
-  password  = var.mso_password
-  // Requires ENV variable TF_VAR_mso_url
-  url       = var.mso_url
-
-  insecure  = true
-}
-
 data "mso_site" "on_premises" {
   name  = var.site_name
 }
@@ -40,6 +28,6 @@ resource "mso_schema_site_anp_epg_domain" "db_domain" {
   epg_name             = "DB"
   domain_type          = "vmmDomain"
   dn                   = "VMware-VMM"
-  deploy_immediacy     = "lazy"
-  resolution_immediacy = "lazy"
+  deploy_immediacy     = "immediate"
+  resolution_immediacy = "pre-provision"
 }
